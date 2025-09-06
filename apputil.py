@@ -7,5 +7,3 @@ def ways(n):
         pennies = n - 5 * nickels
         if pennies >= 0:
             count += 1
-    return count
-print(ways(10))  # Example usage
