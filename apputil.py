@@ -8,4 +8,4 @@ def ways(n):
         if pennies >= 0:
             count += 1
     return count
-print(ways(10))  # Example usage
+print(ways(10))  
