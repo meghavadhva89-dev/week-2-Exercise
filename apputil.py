@@ -31,7 +31,10 @@ def lowest_score(names, scores):
     Returns:
         str: Name of the student with the lowest score.
     """
-    lowest_index = np.argmin(scores)  # index of the lowest score
+    # Ensure scores is a 1D array and names is a list or 1D array
+    scores = np.asarray(scores).flatten()
+    names = np.asarray(names).flatten()
+    lowest_index = int(np.argmin(scores))  # ensure scalar integer
     return names[lowest_index]
 
 
