@@ -17,11 +17,6 @@ def ways(n):
             count += 1
     return count
 
-names = np.array(['Hannah', 'Astrid', 'Abdul', 'Mauve', 'Jung'])
-scores = np.array([99, 71, 85, 62, 91])
-
-print("Lowest scoring student:", lowest_score(names, scores))
-print("Students sorted by descending scores:", sort_names(names, scores))
 
 import numpy as np
 
