@@ -34,8 +34,9 @@ def lowest_score(names, scores):
     # Ensure scores is a 1D array and names is a list or 1D array
     scores = np.asarray(scores).flatten()
     names = np.asarray(names).flatten()
-    lowest_index = int(np.argmin(scores))  # ensure scalar integer
-    return names[lowest_index]
+    names_list = names.tolist()  # ensure Python list
+    lowest_index = int(np.argmin(scores))
+    return str(names_list[lowest_index])  # always return Python string
 
 
 def sort_names(names, scores):
