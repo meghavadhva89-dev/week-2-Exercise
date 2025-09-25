@@ -16,7 +16,12 @@ def ways(n):
         if pennies >= 0:
             count += 1
     return count
-print(ways(10))  # Example usage
+
+names = np.array(['Hannah', 'Astrid', 'Abdul', 'Mauve', 'Jung'])
+scores = np.array([99, 71, 85, 62, 91])
+
+print("Lowest scoring student:", lowest_score(names, scores))
+print("Students sorted by descending scores:", sort_names(names, scores))
 
 import numpy as np
 
@@ -31,13 +36,11 @@ def lowest_score(names, scores):
     Returns:
         str: Name of the student with the lowest score.
     """
-    # Ensure scores is a 1D array and names is a list or 1D array
     scores = np.asarray(scores).flatten()
     names = np.asarray(names).flatten()
-    names_list = names.tolist()  # ensure Python list
+    names_list = names.tolist()
     lowest_index = int(np.argmin(scores))
-    return str(names_list[lowest_index])  # always return Python string
-
+    return str(names_list[lowest_index])
 
 def sort_names(names, scores):
     """
@@ -50,13 +53,5 @@ def sort_names(names, scores):
     Returns:
         np.array: Names sorted from highest to lowest score.
     """
-    sorted_indices = np.argsort(scores)[::-1]  # indices for sorting descending
+    sorted_indices = np.argsort(scores)[::-1]
     return names[sorted_indices]
-
-
-
-names = np.array(['Hannah', 'Astrid', 'Abdul', 'Mauve', 'Jung'])
-scores = np.array([99, 71, 85, 62, 91])
-
-print("Lowest scoring student:", lowest_score(names, scores))
-print("Students sorted by descending scores:", sort_names(names, scores))
