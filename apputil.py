@@ -47,5 +47,6 @@ def sort_names(names, scores):
     Returns:
         np.array: Names sorted from highest to lowest score.
     """
+    names = np.asarray(names)
     sorted_indices = np.argsort(scores)[::-1]
     return names[sorted_indices]
